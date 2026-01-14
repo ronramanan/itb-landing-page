@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Free Booking Engines | easyGDS at ITB Berlin 2026</title>
+    <meta name="description"
+        content="Get your free professional booking engine at ITB Berlin 2026. Limited to 100 travel agents. No setup fees, no hidden costs.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+
+    <style>
+        :root {
+            /* easyGDS Brand Colors - Updated */
+            --primary-blue: #203C94;
+            --primary-dark: #1A3075;
+            --accent-glow: #4C6EF5;
+            --purple-highlight: #8B5CF6;
+            /* Purple color */
+
+            --surface-glass: rgba(255, 255, 255, 0.75);
+            --surface-glass-strong: rgba(255, 255, 255, 0.90);
+            --border-glass: rgba(255, 255, 255, 0.6);
+
+            /* Text Colors */
+            --text-main: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-light: #888888;
+
+            /* Campaign Accents */
+            --gradient-primary: linear-gradient(135deg, #203C94 0%, #2E50B6 100%);
+            --accent-orange: #FF6B35;
+
+            /* Typography */
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: #F5F7FA;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(32, 60, 148, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(255, 107, 53, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: var(--surface-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 8px 32px 0 rgba(32, 60, 148, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 30px rgba(32, 60, 148, 0.1);
+            border-color: white;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 100;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .header-cta {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(32, 60, 148, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 5.5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+
+        .text-gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-purple {
+            color: var(--purple-highlight);
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 580px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-btn-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-glow {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -10px var(--primary-blue);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(32, 60, 148, 0.4);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--text-main);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-glass);
+        }
+
+        .btn-glass:hover {
+            background: white;
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* Hero Visual - Updated Crop & 3D */
+        .hero-visual {
+            position: relative;
+            perspective: 2500px;
+            padding-right: 2rem;
+        }
+
+        .floating-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow:
+                30px 50px 80px -20px rgba(32, 60, 148, 0.25),
+                15px 30px 40px -20px rgba(0, 0, 0, 0.15);
+            /* Enhanced 3D angle */
+            transform: rotateY(-20deg) rotateX(10deg) rotateZ(-2deg);
+            transition: all 0.6s ease;
+            position: relative;
+            z-index: 10;
+            border: 8px solid white;
+            overflow: hidden;
+            /* Half height crop */
+            height: 420px;
+            max-width: 100%;
+        }
+
+        .floating-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top left;
+            opacity: 0;
+            animation: fadeLoop 8s infinite;
+        }
+
+        .floating-card img:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .floating-card img:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        @keyframes fadeLoop {
+            0% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            5% {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            45% {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            50% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            100% {
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+
+        .hero-visual:hover .floating-card {
+            transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+            box-shadow:
+                0 50px 100px -20px rgba(32, 60, 148, 0.2),
+                0 30px 60px -30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats in Hero */
+        .hero-stats {
+            margin-top: 2rem;
+            display: flex;
+            gap: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-item h3 {
+            font-size: 2.2rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            text-align: center;
+            padding: 2rem 0 4rem;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Updated: Full Color Logos */
+        .trust-logo-img {
+            height: 50px;
+            max-width: 160px;
+            width: auto;
+            object-fit: contain;
+            /* Removed grayscale filter */
+            filter: none;
+            transition: all 0.3s;
+        }
+
+        .trust-logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Features - Reduced Spacing */
+        .features {
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            /* Reduced from 5rem */
+        }
+
+        .section-tag {
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            /* Reduced from 2rem */
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .feature-card-content {
+            padding: 2.5rem;
+            height: 100%;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(32, 60, 148, 0.08);
+            color: var(--primary-blue);
+        }
+
+        .feature-icon .material-icons-round {
+            font-size: 28px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, transparent, rgba(32, 60, 148, 0.03));
+        }
+
+        .faq-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item details {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item details:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .faq-item summary {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            transition: transform 0.3s;
+        }
+
+        .faq-item details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 1.5rem 1.5rem;
+            columns: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Registration Form */
+        .registration {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .reg-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--gradient-primary);
+            border-radius: 32px;
+            padding: 8px;
+            /* Border padding */
+            box-shadow: 0 40px 100px -20px rgba(32, 60, 148, 0.4);
+        }
+
+        .reg-content {
+            background: white;
+            border-radius: 26px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .reg-info h2 {
+            font-size: 2.2rem;
+            font-family: var(--font-display);
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .reg-steps {
+            list-style: none;
+            margin-top: 3rem;
+        }
+
+        .reg-steps li {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background: rgba(32, 60, 148, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .form-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-input {
+            padding: 1rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(32, 60, 148, 0.1);
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.25rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 20px -5px rgba(32, 60, 148, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -5px rgba(32, 60, 148, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            background: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 4rem;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-btn-group,
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .reg-content {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                gap: 3rem;
+            }
+
+            .hero-title {
+                font-size: 3.2rem;
+            }
+
+            .form-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Glass Header -->
+    <header class="header glass-panel">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="assets/easygds_logo.png" alt="easyGDS" class="logo-img">
+            </a>
+            <a href="#register" class="header-cta">
+                <span>Claim Offer</span>
+                <span class="material-icons-round" style="font-size: 18px;">arrow_forward</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="material-icons-round" style="font-size: 16px;">event</span>
+                    ITB Berlin 2026 · Hall 6.1, Stand 228
+                </div>
+
+                <h1 class="hero-title">
+                    Get your <span class="text-purple">Free Booking Engine</span> at ITB Berlin.
+                </h1>
+
+                <p class="hero-subtitle">
+                    We are empowering 100 agencies with a complete booking engine, website and OTA platform. No setup
+                    fees. No hidden cost. 100% transparent.
+                </p>
+
+                <div class="hero-btn-group">
+                    <a href="#register" class="btn-glow">Claim Your Engine</a>
+                    <a href="#features" class="btn-glass">What's Included</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100</h3>
+                        <p>Free Spots</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>$4,800</h3>
+                        <p>Yearly Value</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0%</h3>
+                        <p>Setup Fees</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <!-- Rotating Images -->
+                    <img src="assets/easygds_screenshot.png" alt="easyGDS Booking Engine">
+                    <img src="assets/easygds_homepage_screenshot.png" alt="easyGDS Homepage">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <p
+            style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; font-weight: 700; color: var(--text-light); margin-bottom: 2rem;">
+            Trusted by industry leaders</p>
+        <div class="trust-logos">
+            <!-- Real Logos from Local -->
+            <img src="assets/etihad%20logo.png" alt="Etihad Airways" class="trust-logo-img">
+            <img src="assets/malaysia_airlines_logo.png" alt="Malaysia Airlines" class="trust-logo-img"
+                style="height: 55px;">
+            <img src="assets/amadeus_logo.png" alt="Amadeus" class="trust-logo-img">
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">What's Included</span>
+            <h2 class="section-title">Everything You Need To Scale</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">A comprehensive suite of tools designed to
+                compete with the giants.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="glass-card feature-card-content" style="border-radius: 16px;">
+                <div class="feature-icon">
+                    <span class="material-icons-round">language</span>
+                </div>
+                <h3
+                    style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; font-family: var(--font-display);">
+                    Branded Website</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Your own fully functional travel website,
+                    mobile-optimized and ready for conversions immediately.</p>
+            </div>
+
+            <div class="glass-card feature-card-content" style="border-radius: 16px;">
+                <div class="feature-icon">
+                    <span class="material-icons-round">flight_takeoff</span>
+                </div>
+                <h3
+                    style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; font-family: var(--font-display);">
+                    Booking Engine</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Powerful search for Flights, Hotels, and
+                    Activities with real-time global inventory.</p>
+            </div>
+
+            <!-- New Content Card -->
+            <div class="glass-card feature-card-content" style="border-radius: 16px;">
+                <div class="feature-icon">
+                    <span class="material-icons-round">inventory_2</span>
+                </div>
+                <h3
+                    style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; font-family: var(--font-display);">
+                    Unrivalled Content</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Direct connect NDC content, plus 500+ Low
+                    Cost Carriers and 2M+ hotels worldwide.</p>
+            </div>
+
+            <!-- New B2B Card -->
+            <div class="glass-card feature-card-content" style="border-radius: 16px;">
+                <div class="feature-icon">
+                    <span class="material-icons-round">hub</span>
+                </div>
+                <h3
+                    style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; font-family: var(--font-display);">
+                    B2B Network</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Expand your reach. Create your own B2B
+                    sub-agent network and earn overrides on bookings.</p>
+            </div>
+
+            <div class="glass-card feature-card-content" style="border-radius: 16px;">
+                <div class="feature-icon">
+                    <span class="material-icons-round">credit_card</span>
+                </div>
+                <h3
+                    style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; font-family: var(--font-display);">
+                    Global Payments</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Integrated payment gateways supporting 80+
+                    methods globally. Secure and PCI compliant.</p>
+            </div>
+
+            <div class="glass-card feature-card-content" style="border-radius: 16px;">
+                <div class="feature-icon">
+                    <span class="material-icons-round">support_agent</span>
+                </div>
+                <h3
+                    style="font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; font-family: var(--font-display);">
+                    Expert Support</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Full onboarding and 90 days of dedicated
+                    technical support to ensure your success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration -->
+    <section class="registration" id="register">
+        <div class="reg-container">
+            <div class="reg-content">
+                <div class="reg-info">
+                    <h2>Claim Your Free Engine</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 400px;">Don't miss this
+                        exclusive opportunity at ITB Berlin. Spots are strictly limited to 100.</p>
+
+                    <ul class="reg-steps">
+                        <li>
+                            <div class="step-num">1</div>
+                            <div>
+                                <strong>Fill the form</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Reserve your spot online
+                                    now.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">2</div>
+                            <div>
+                                <strong>Visit our Stand</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Hall 6.1, Stand 228 at ITB
+                                    Berlin.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">3</div>
+                            <div>
+                                <strong>Go Live</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Walk away with a fully
+                                    active business.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reg-form">
+                    <form action="#" class="form-fields">
+                        <div class="form-group full-width">
+                            <label>Full Name</label>
+                            <input type="text" class="form-input" placeholder="e.g. Sarah Connor">
+                        </div>
+                        <div class="form-group">
+                            <label>Agency Name</label>
+                            <input type="text" class="form-input" placeholder="Sky Travels">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-input" placeholder="sarah@skytravels.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select class="form-input">
+                                <option>Germany</option>
+                                <option>United Kingdom</option>
+                                <option>France</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Attending ITB Berlin?</label>
+                            <select class="form-input">
+                                <option>Yes, definitely</option>
+                                <option>Planning to</option>
+                                <option>Not sure</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn full-width">
+                            Reserve My Spot
+                            <span class="material-icons-round">arrow_forward</span>
+                        </button>
+
+                        <div class="full-width"
+                            style="text-align: center; font-size: 0.85rem; color: var(--text-light); margin-top: 1rem;">
+                            No credit card required. 100% Free for 12 months.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-inner">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <span class="section-tag">Questions?</span>
+                <h2 class="section-title" style="font-size: 2.2rem;">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <details>
+                        <summary>What's the catch?</summary>
+                        <div class="faq-content">
+                            There isn't one. The booking engine is completely free – no setup fees, no monthly fees for
+                            12 months. We believe in supporting independent travel agents and know that when you
+                            succeed, we all win.
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Is this really worth $4,800?</summary>
+                        <div class="faq-content">
+                            Yes. Our Premium booking engine is normally priced at $399/month. You're getting the same
+                            professional system our airline clients use – full B2C website, e-commerce capabilities, and
+                            access to all Tripovo content.
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>Do I have to attend ITB Berlin?</summary>
+                        <div class="faq-content">
+                            Yes, this offer is exclusive to ITB Berlin attendees. You must visit our booth to activate
+                            your booking engine. It's our way of meeting face-to-face and starting our partnership
+                            right.
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-item">
+                    <details>
+                        <summary>What happens after 12 months?</summary>
+                        <div class="faq-content">
+                            After your free year, you can choose to continue on a paid plan or let it finish –
+                            completely your choice. You can also upgrade to a higher tier at any time and just pay the
+                            price difference.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div style="margin-bottom: 1rem;">
+            <img src="assets/easygds_logo.png" alt="easyGDS"
+                style="height: 24px; filter: grayscale(100%); opacity: 0.5;">
+        </div>
+        <p>© 2026 easyGDS. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
