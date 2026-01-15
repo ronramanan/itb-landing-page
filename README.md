@@ -19,4 +19,4 @@ The landing page is designed to promote the "100 Free Booking Engines" offer for
 
 This site is deployed via Cloudflare Pages.
 
-*   **Live URL**: [https://itb-landing-page.pages.dev](https://itb-landing-page.pages.dev)
+*   **Live URL**: [https://itb.easygds.com](https://itb.easygds.com)

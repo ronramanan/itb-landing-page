@@ -3,7 +3,7 @@
 > Get a free professional booking engine (Flight + Hotel) for your travel agency. Exclusive offer for ITB Berlin 2026 attendees.
 
 ## Offer Details
-- [Claim Engine](https://itb-landing-page.pages.dev/): Register for one of the 100 free spots.
+- [Claim Engine](https://itb.easygds.com/): Register for one of the 100 free spots.
 - **Value**: $4,800/year (12 months free).
 - **Includes**: Branded B2C website, Booking Engine, Global Content, B2B Network tools.
 - **Location**: Hall 6.1, Stand 228.

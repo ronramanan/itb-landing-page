@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://itb-landing-page.pages.dev/sitemap.xml
+Sitemap: https://itb.easygds.com/sitemap.xml
 
 # --- SEARCH ENGINES (Allow) ---
 User-agent: Googlebot

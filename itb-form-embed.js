@@ -3,7 +3,7 @@
 
   const FORM_ENDPOINT = 'https://aulrbkdftasdrtctsvzr.supabase.co/functions/v1/itb-registration-form';
   // Using Google's Test Key for reCAPTCHA v2. Replace with your own site key in production.
-  const RECAPTCHA_SITE_KEY = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+
 
   const COUNTRIES = [
     "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
@@ -87,12 +87,7 @@
     .itb-form-input::placeholder {
       color: #9ca3af;
     }
-    .itb-captcha-container {
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        min-height: 78px;
-    }
+
     .itb-form-select {
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
@@ -235,10 +230,7 @@
             </select>
           </div>
 
-          <!-- Captcha Container -->
-          <div class="itb-captcha-container">
-            <div id="itb-recaptcha"></div>
-          </div>
+
 
           <button type="submit" class="itb-form-submit">
             <span>Reserve My Spot</span>
@@ -255,21 +247,7 @@
     const form = document.getElementById('itb-form');
     form.addEventListener('submit', handleSubmit);
     
-    // Render Captcha with retry
-    const renderCaptcha = () => {
-        if (window.grecaptcha && window.grecaptcha.render) {
-            try {
-                window.grecaptcha.render('itb-recaptcha', {
-                    'sitekey': RECAPTCHA_SITE_KEY
-                });
-            } catch (e) {
-                console.error('Captcha render check:', e);
-            }
-        } else {
-            setTimeout(renderCaptcha, 100);
-        }
-    };
-    renderCaptcha();
+
   }
 
   function validateEmail(email) {
@@ -343,14 +321,7 @@
       hasErrors = true;
     }
 
-    // Verify Captcha
-    const captchaResponse = window.grecaptcha ? window.grecaptcha.getResponse() : '';
-    if (!captchaResponse) {
-        showMessage('error', 'Please complete the CAPTCHA check');
-        hasErrors = true;
-    } else {
-        data.captcha_token = captchaResponse;
-    }
+
 
     if (hasErrors) return;
 
@@ -371,10 +342,10 @@
       if (response.ok && result.success) {
         showMessage('success', result.message || 'Registration successful! We will contact you soon.');
         form.reset();
-        if (window.grecaptcha) window.grecaptcha.reset();
+
       } else {
         showMessage('error', result.error || 'Something went wrong. Please try again.');
-        if (window.grecaptcha) window.grecaptcha.reset();
+
       }
     } catch (error) {
       console.error('ITB Form Error:', error);
