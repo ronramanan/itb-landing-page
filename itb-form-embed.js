@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   const FORM_ENDPOINT = 'https://aulrbkdftasdrtctsvzr.supabase.co/functions/v1/itb-registration-form';
@@ -7,7 +7,7 @@
 
   const COUNTRIES = [
     "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
-    "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", 
+    "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia",
     "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
     "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica",
     "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt",
@@ -81,8 +81,8 @@
     .itb-form-input:focus,
     .itb-form-select:focus {
       outline: none;
-      border-color: #334580;
-      box-shadow: 0 0 0 3px rgba(51, 69, 128, 0.1);
+      border-color: #f37335;
+      box-shadow: 0 0 0 3px rgba(243, 115, 53, 0.1);
     }
     .itb-form-input::placeholder {
       color: #9ca3af;
@@ -101,7 +101,7 @@
       font-size: 16px;
       font-weight: 600;
       color: #fff;
-      background: #334580;
+      background: #f37335;
       border: none;
       border-radius: 12px;
       cursor: pointer;
@@ -113,9 +113,9 @@
       margin-top: 8px;
     }
     .itb-form-submit:hover {
-      background: #283660;
+      background: #d35b21;
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(51, 69, 128, 0.3);
+      box-shadow: 0 4px 12px rgba(243, 115, 53, 0.3);
     }
     .itb-form-submit:disabled {
       opacity: 0.7;
@@ -246,7 +246,7 @@
     // Attach event listener
     const form = document.getElementById('itb-form');
     form.addEventListener('submit', handleSubmit);
-    
+
 
   }
 
