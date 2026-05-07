@@ -707,6 +707,33 @@
                 height: 22px;
             }
         }
+
+        /* New Nav Links for Header */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-right: auto;
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -717,6 +744,10 @@
             <a href="https://www.easygds.com" class="logo">
                 <img src="assets/easygds_logo.png" alt="easyGDS" class="logo-img">
             </a>
+            <nav class="nav-links">
+                <a href="touristboard.html" class="nav-link"
+                    style="color: var(--text-secondary); font-weight: 600;">Tourist Boards & Airlines &rarr;</a>
+            </nav>
             <a href="#register" class="header-cta">
                 <span>Claim Offer</span>
                 <span class="material-icons-round" style="font-size: 18px;">arrow_forward</span>
@@ -973,6 +1004,11 @@
         <div style="margin-bottom: 1rem;">
             <img src="assets/easygds_logo.png" alt="easyGDS"
                 style="height: 24px; filter: grayscale(100%); opacity: 0.5;">
+        </div>
+        <div style="margin-bottom: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; font-size: 0.9rem;">
+            <a href="index.html" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">Travel
+                Agents</a>
+            <a href="touristboard.html" style="color: var(--text-light); text-decoration: none;">Tourist Boards</a>
         </div>
         <p>© 2026 easyGDS. All Rights Reserved.</p>
     </footer>
